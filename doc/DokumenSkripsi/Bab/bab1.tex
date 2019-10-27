@@ -4,21 +4,21 @@
    
 \section{Latar Belakang}
 \label{sec:label}
+\paragraph{}
+Pengujian perangkat lunak merupakan salah satu tahapan dari pengembangan perangkat lunak, sebelum melakukan pengujian, tahapan umum untuk melakukan pengembangan perangkat lunak, yaitu :
+\begin{enumerate}
+\item Analisis
+\item Desain
+\item Implementasi
+\item Pengujian
+\item Pemeliharaan
+\end{enumerate}
+\paragraph{}
+Pengujian perangkat lunak adalah proses untuk mencari kesalahan pada setiap \textit{item} perangkat lunak, mencatat hasilnya, mengevaluasi setiap aspek pada setiap komponen (sistem) dan mengevaluasi fasilitas-fasilitas dari perangkat lunak yang akan dikembangkan[1].Pengujian pada perangkat lunak merupakan tahapan yang wajib dilakukan sebelum perangkat lunak tersebut digunakan, agar memastikan sudah tidak ada \textit{error/bug} pada perangkat lunak yang sedang dikembangkan. Pengujian perangkat lunak memakan \textit{resource} yang berat, baik itu waktu maupun waktu maupun tenaga kerja, karena untuk melakukan pengujian perangkat lunak dibutuhkan \textit{developer} ahli \textit{Software Quality Assurance}(SQA). SQA yang bertanggung jawab untuk memastikan bahwa perangkat lunak yang sedang dikembangkan bebas dari \textit{bug} agar siap untuk di-\textit{release} dan digunakan oleh pengguna.
 
-Salah satu tahapan dari pengembangan perangkat lunak adalah pengujian, pengujian merupakan tahapan yang penting pada pengembangan suatu perangkat lunak, pengujian perangkat lunak adalah  proses menjalankan/menguji perangkat lunak atau aplikasi dengan maksud untuk menemukan \textit{bug} dari perangkat lunak yang sedang dikembangkan. Pengujian merupakan tahapan yang memakan \textit{resource} yang berat, baik itu waktu maupun tenaga kerja, karena tidak bisa sembarang \textit{developer} yang bisa melakukan pengujian, pengujian perangkat lunak dilakukan oleh \textit{developer} ahli yang disebut \textit{Software Quality Assurance}(SQA). SQA ialah orang yang akan melakukan pengujian perangkat lunak. SQA yang menjamin kualitas dari sebuah perangkat lunak, terbebas nya perangkat lunak dari segala \textit{bug} dan \textit{error} sebelum perangkat lunak tersebut digunakan oleh pengguna.	
+Ada beberapa metode untuk melakukan pengujian perangkat lunak, salah satunya yaitu \textit{Test-Driven Development}(TDD). TDD adalah praktik pemrograman yang menginstruksikan pengembang perangkat lunak untuk menulis kode baru hanya ketika tes yang dilakukan secara otomatis gagal, dan menghilangkan duplikasi. Tujuan TDD adalah kode bersih yang berfungsi[2]. Tetapi, TDD memiliki masalah, bahwa TDD berfokus pada keadaan sistem daripada \textit{behaviour} yang diinginkan oleh sistem, dan kode pada pengujian \textit{highly coupled} dengan implementasi sistem yang ada[3]. Maka dari itu metode yang akan kita gunakan pada skripsi ini adalah \textit{Behaviour-Driven Development}.
 
-Ada beberapa teknik untuk melakukan pengujian pada perkembangan perangkat lunak, salah satunya yaitu \textit{Test-Driven Development}(TDD). \textit{Test-driven development} (TDD) adalah praktik pemrograman yang menginstruksikan pengembang perangkat lunak untuk menulis kode baru hanya jika tes otomatis gagal, dan menghilangkan duplikasi, tujuan TDD adalah kode bersih yang berfungsi.[2] TDD  membantu untuk mencapai beberapa karakteristik yang diinginkan dalam perangkat lunak, seperti \textit{decoupling} dan pemisahan masalah, praktik lain harus melengkapi penggunaannya, terutama untuk arsitektur dan koherensi desain.
-
-Pada skripsi ini teknik yang akan digunakan untuk melakukan pengujian pada perangkat lunak yaitu \textit{Behaviour-Driven Development}(BDD). BDD adalah pendekatan pengembangan perangkat lunak yang mendorong kolaborasi antara semua peserta proyek. BDD adalah evolusi dari test-driven development (TDD) dan acceptance test-driven planning.
-
-Prinsip inti dari BDD mengatakan “bahwa orang bisnis dan teknologi harus merujuk ke sistem yang sama dengan cara yang sama”. Untuk mencapai tujuan ini, natural language diperlukan untuk menentukan perilaku sistem, agar sistem memungkinkan untuk: (a) pelanggan agar bisa menentukan requirement dari perspektif bisnis, (b) analis bisnis untuk melampirkan contoh konkret (skenario atau tes penerimaan) yang menjelaskan perilaku sistem, dan (c) pengembang untuk mengimplementasikan perilaku sistem yang diperlukan menggunakan cara TDD. 
-
-Penggunaan behaviour specification pada pengembangan perangkat lunak akan membuat user dapat ikut berpartisipasi secara langsung dalam proses pengujian tanpa perlu memikirkan bagaimana cara melakukan pengujian sebuah perangkat lunak, karena akan langsung diarahkan oleh developer-nya cara untuk melakukan pengujian bagi pengguna.
-
-Tahap pengujian merupakan tahap yang perlu dilakukan sebelum perangkat lunak disebarluaskan dan dengan adanya pengujian \textit{developer} akan meminimalisir segala kesalahan yang mungkin timbul pada perangkat lunak yang sedang dikembangkan. Dengan adanya pengujian berbasis \textit{behaviour specification} pengguna bisa ikut serta dalam pengembangan suatu perangkat lunak.
-
-Pada skripsi ini akan dibangun sebuah perangkat pengujian yang mengimplementasi \textit{behaviour specification} untuk menguji sebuah perangkat lunak.
-
+\textit{Behaviour-Driven Development}(BDD) merupakan evolusi dari TDD untuk menyelesaikan masalah yang ada pada TDD. BDD adalah pendekatan pengembangan perangkat lunak yang \textit{agile} untuk mendorong kolaborasi antara semua peserta dalam proses pengembangan perangkat lunak[4].
 \section{Rumusan Masalah}
 \label{sec:rumusan}
 \begin{itemize}
@@ -60,3 +60,4 @@ masalah, tujuan, batasan masalah, dan metodologi.
 \item BAB II. LANDASAN TEORI\\
 Bab 2 memuat uraian tentang teori yang akan digunakan pada pembuatan perangkat lunak.
 \end{itemize}
+
