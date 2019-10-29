@@ -1,4 +1,4 @@
-%versi 2 (8-10-2016) 
+	%versi 2 (8-10-2016) 
 \chapter{Pendahuluan}
 \label{chap:intro}
    
@@ -16,9 +16,24 @@ Pengujian perangkat lunak merupakan salah satu tahapan dari pengembangan perangk
 \paragraph{}
 Pengujian perangkat lunak adalah proses untuk mencari kesalahan pada setiap \textit{item} perangkat lunak, mencatat hasilnya, mengevaluasi setiap aspek pada setiap komponen (sistem) dan mengevaluasi fasilitas-fasilitas dari perangkat lunak yang akan dikembangkan[1].Pengujian pada perangkat lunak merupakan tahapan yang wajib dilakukan sebelum perangkat lunak tersebut digunakan, agar memastikan sudah tidak ada \textit{error/bug} pada perangkat lunak yang sedang dikembangkan. Pengujian perangkat lunak memakan \textit{resource} yang berat, baik itu waktu maupun waktu maupun tenaga kerja, karena untuk melakukan pengujian perangkat lunak dibutuhkan \textit{developer} ahli \textit{Software Quality Assurance}(SQA). SQA yang bertanggung jawab untuk memastikan bahwa perangkat lunak yang sedang dikembangkan bebas dari \textit{bug} agar siap untuk di-\textit{release} dan digunakan oleh pengguna.
 
-Ada beberapa metode untuk melakukan pengujian perangkat lunak, salah satunya yaitu \textit{Test-Driven Development}(TDD). TDD adalah praktik pemrograman yang menginstruksikan pengembang perangkat lunak untuk menulis kode baru hanya ketika tes yang dilakukan secara otomatis gagal, dan menghilangkan duplikasi. Tujuan TDD adalah kode bersih yang berfungsi[2]. Tetapi, TDD memiliki masalah, bahwa TDD berfokus pada keadaan sistem daripada \textit{behaviour} yang diinginkan oleh sistem, dan kode pada pengujian \textit{highly coupled} dengan implementasi sistem yang ada[3]. Maka dari itu metode yang akan kita gunakan pada skripsi ini adalah \textit{Behaviour-Driven Development}.
+Ada beberapa metode untuk melakukan pengujian perangkat lunak, salah satunya yaitu \textit{Test-Driven Development}(TDD). TDD adalah praktik pemrograman yang menginstruksikan pengembang perangkat lunak untuk menulis kode baru hanya ketika tes yang dilakukan secara otomatis gagal, dan menghilangkan duplikasi. Tujuan TDD adalah kode bersih yang berfungsi[2]. Tetapi, TDD memiliki masalah, bahwa TDD berfokus pada keadaan sistem daripada \textit{behaviour} yang diinginkan oleh sistem, dan kode pada pengujian \textit{highly coupled} dengan implementasi sistem yang ada[3]. Maka dari itu metode yang akan digunakan pada skripsi ini adalah \textit{Behaviour-Driven Development}.
 
 \textit{Behaviour-Driven Development}(BDD) merupakan evolusi dari TDD untuk menyelesaikan masalah yang ada pada TDD. BDD adalah pendekatan pengembangan perangkat lunak yang \textit{agile} untuk mendorong kolaborasi antara semua peserta dalam proses pengembangan perangkat lunak[4].
+
+Prinsip inti dari BDD adalah "orang bisnis dan teknologi harus merujuk ke sistem yang sama dengan cara yang sama"[4]. Berbeda dengan TDD yang berpatokan pada test untuk \textit{develope} lebih jauh program yang akan digunakan, BDD berpatokan pada keinginan \textit{stakeholder/customer} untuk mengembangkan programnya. Untuk mencapai kesepakatan antara \textit{developer} dan \textit{stakeholder/customer}, maka dibutuhkan \textit{language} untuk menspesifikasikan \textit{behaviour} sebuah sistem agar kedua pihak paham, dan dapat mewujudkan hal berikut[4]:
+\begin{itemize}
+\item \textit{Stakeholder/Customer} untuk menentukan persyaratan dari perspektif bisnis.
+\item Analis bisnis untuk melampirkan contoh konkret (skenario atau \textit{acceptance tests}) yang menjelaskan \textit{behaviour} sistem.
+\item \textit{Developer} untuk mengimplementasikan \textit{behaviour} sistem yang diperlukan secara TDD.
+\end{itemize}
+	
+Pengujian dengan basis \textit{behaviour specification} akan berfokus kepada hal yang \textit{stakeholder/customer} harapkan pada suatu sistem dengan \textit{behaviour} yang sudah di spesifikasikan. Pengujian akan berawal dengan membuat \textit{Behaviour Test} yang berisi [4]:
+\begin{enumerate}
+\item \textit{Context/Starting state} : Posisi awal sistem sebelum terjadinya suatu \textit{event}.
+\item \textit{Event} : \textit{Task} yang dilakukan oleh pengguna pada sistem.
+\item \textit{Outcome} : Hasil yang diharapkan dari sistem.
+\end{enumerate}
+\textit{Developer} akan menjadikan \textit{Behaviour Test} sebagai patokan dasar bekerjanya suatu sistem, dan akan melakukan pengujian berbasis \textit{Behaviour Test}. Pengujian dilakukan untuk memastikan bahwa sistem sudah bekerja sesuai apa yang \textit{stakeholder/customer} harapkan, dan jika \textit{Behaviour Test} berhasil dilakukan, maka sistem sudah siap untuk digunakan. 
 \section{Rumusan Masalah}
 \label{sec:rumusan}
 \begin{itemize}
