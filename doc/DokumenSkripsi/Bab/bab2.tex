@@ -2,8 +2,24 @@
 \chapter{Landasan Teori}
 \label{chap:teori}
 
-\section{Unit Testing}
-\label{unittesting}
+\section{Pengujian Perangkat Lunak}
+\label{softwaretesting}
+\paragraph{}
+Pandangan umum pengujian perangkat lunak adalah bahwa kegiatan ini adalah untuk menemukan \textit{bug}. Tujuan pengujian perangkat lunak adalah untuk memenuhi syarat kualitas program perangkat lunak dengan mengukur atribut dan kemampuannya terhadap ekspektasi dan standar yang berlaku. Pengujian perangkat lunak juga menyediakan informasi berharga untuk upaya pengembangan perangkat lunak.[9]
+
+Kualitas perangkat lunak adalah sesuatu yang diinginkan semua orang. Manajer tahu bahwa mereka menginginkan kualitas tinggi, pengembang perangkat lunak tahu mereka ingin menghasilkan produk yang berkualitas, dan pengguna bersikeras bahwa perangkat lunak bekerja secara konsisten dan dapat diandalkan.[9]
+
+Banyak kelompok kualitas perangkat lunak mengembangkan \textit{software quality assurance plan}, dimana hal itu sama dengan \textit{test plans}. Rencana jaminan kualitas perangkat lunak dapat mencakup berbagai kegiatan di luar yang termasuk dalam \textit{test plan}. \textit{Quality assurance plan} mencakup keseluruhan kualitas, rencana pengujian adalah salah satu alat kontrol kualitas dari rencana jaminan kualitas.[9]
+
+Pada pembahasan pengujian perangkat lunak, ada \textit{term} yang biasa digunakan, yaitu[8]:
+\begin{itemize}
+\item \textbf{Error} --- Orang membuat \textit{error}. Sinonim yang baik adalah \textit{mistake}. Ketika orang membuat \textit{error} saat melakukan \textit{coding}, kami menyebut \textit{error} ini \textit{bug}. \textit{Error} cenderung menyebar; \textit{requirements error} dapat diperbesar selama proses desain dan lebih diperkuat lagi selama pengkodean.
+\item \textbf{Fault} --- \textit{Fault} adalah hasil dari \textit{error}. Lebih tepat untuk mengatakan bahwa \textit{fault} adalah representasi dari \textit{error}, di mana representasi adalah mode ekspresi, seperti teks naratif, diagram Bahasa Pemodelan Bersatu, diagram hierarki, dan kode sumber. \textit{Defect} adalah sinonim yang baik untuk \textit{fault}, sama juga seperti \textit{bug}. \textit{Fault} bisa sulit dipahami. \textit{Error} yang disebakan oleh kelalaian menghasilkan \textit{fault} di mana ada sesuatu yang hilang yang seharusnya ada di dalam representasi.
+\item \textit{\textbf{Failure}} --- \textit{Failure} terjadi ketika kode yang sesuai dengan \textit{fault} dijalankan. Dua kehalusan muncul di sini: satu adalah bahwa \textit{failure} hanya terjadi dalam representasi yang dapat dieksekusi, yang biasanya dianggap sebagai kode sumber, atau lebih tepatnya, kode objek yang dimuat; kehalusan kedua adalah bahwa definisi ini hanya mengaitkan \textit{failure} dengan \textit{fault} komisi.
+\item \textbf{Incident} --- Ketika \textit{failure} terjadi, itu mungkin atau mungkin tidak mudah terlihat oleh pengguna (atau pelanggan atau penguji). Suatu \textit{incident} adalah gejala yang terkait dengan \textit{failure} yang memberi tahu pengguna tentang terjadinya \textit{failure}.
+\item \textbf{Test} --- \textit{Testing} jelas berkaitan dengan  \textit{errors, faults, failures, and incidents}. \textit{Test} adalah tindakan melatih perangkat lunak dengan \textit{test case}. \textit{Test} memiliki dua tujuan berbeda: untuk menemukan \textit{failures} atau untuk menunjukkan eksekusi yang benar.
+\item \textbf{Test case} --- \textit{Test case} memiliki identitas dan dikaitkan dengan perilaku program. Ini juga memiliki serangkaian input dan output yang diharapkan.
+\end{itemize}
 
 \section{Bahasa Pemrograman PHP}
 \label{php}
