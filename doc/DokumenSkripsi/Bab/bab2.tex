@@ -7,7 +7,7 @@
 \paragraph{}
 Pandangan umum pengujian perangkat lunak adalah bahwa kegiatan ini adalah untuk menemukan \textit{bug}. Tujuan pengujian perangkat lunak adalah untuk memenuhi syarat kualitas program perangkat lunak dengan mengukur atribut dan kemampuannya terhadap ekspektasi dan standar yang berlaku. Pengujian perangkat lunak juga menyediakan informasi berharga untuk upaya pengembangan perangkat lunak.[9]
 
-Kualitas perangkat lunak adalah sesuatu yang diinginkan semua orang. Manajer tahu bahwa mereka menginginkan kualitas tinggi, pengembang perangkat lunak tahu mereka ingin menghasilkan produk yang berkualitas, dan pengguna bersikeras bahwa perangkat lunak bekerja secara konsisten dan dapat diandalkan.[9]
+Kualitas perangkat lunak adalah sesuatu yang diinginkan semua orang. Manajer tahu bahwa mereka menginginkan kualitas tinggi, pengembangan perangkat lunak tahu mereka ingin menghasilkan produk yang berkualitas, dan pengguna bersikeras bahwa perangkat lunak bekerja secara konsisten dan dapat diandalkan.[9]
 
 Banyak kelompok kualitas perangkat lunak mengembangkan \textit{software quality assurance plan}, dimana hal itu sama dengan \textit{test plans}. Rencana jaminan kualitas perangkat lunak dapat mencakup berbagai kegiatan di luar yang termasuk dalam \textit{test plan}. \textit{Quality assurance plan} mencakup keseluruhan kualitas, rencana pengujian adalah salah satu alat kontrol kualitas dari rencana jaminan kualitas.[9]
 
@@ -51,35 +51,69 @@ Gambar 2.3 menunjukkan hasil \textit{test case} yang diidentifikasi oleh dua met
 	\centering
 	\caption{Comparing specification-based test case identification methods}
 \end{figure}
-\subsection{\textit{Code-Based Testing/White-box Testing}}
+\subsection{\textit{Code-Based/White-box Testing}[8]}
 \paragraph{}
 Pengujian berbasis kode adalah pendekatan mendasar lainnya untuk menguji \textit{test case}. Untuk membandingkannya dengan pengujian \textit{black box}, kadang-kadang disebut pengujian \textit{white box} (atau bahkan \textit{clear box}). Metafora \textit{clear box} mungkin lebih tepat karena perbedaan mendasar adalah bahwa implementasi (\textit{black box}) diketahui dan digunakan untuk mengidentifikasi \textit{test case}. Kemampuan untuk "melihat ke dalam" \textit{black box} memungkinkan tester untuk mengidentifikasi \textit{test case} berdasarkan bagaimana fungsi tersebut benar-benar dijalankan.
 
 Pengujian berbasis kode telah menjadi subjek dari beberapa teori yang cukup kuat. Dengan konsep-konsep ini, tester dapat dengan ketat menggambarkan dengan tepat apa yang akan diuji. Karena dasar teorinya yang kuat, pengujian berbasis kode cocok untuk menjadi definisi dan penggunaan \textit{test coverage metrics}. \textit{Test coverage metrics} menyediakan cara untuk secara eksplisit menyatakan sejauh mana \textit{item} perangkat lunak telah diuji, dan ini pada gilirannya membuat manajemen pengujian lebih jelas.
-
-Gambar 2.4 menunjukkan hasil \textit{test case} yang diidentifikasi oleh dua metode berbasis kode. Seperti sebelumnya, metode A mengidentifikasi satu set kasus uji yang lebih besar daripada metode B. Apakah satu set kasus uji yang lebih besar tentu lebih baik? Ini adalah pertanyaan yang bagus, dan pengujian berbasis kode menyediakan cara-cara penting untuk mengembangkan jawaban. Perhatikan bahwa, untuk kedua metode, himpunan kasus uji sepenuhnya terkandung dalam himpunan perilaku yang diprogram. Karena metode berbasis kode didasarkan pada program, sulit membayangkan metode ini mengidentifikasi perilaku yang tidak diprogram. Sangat mudah untuk membayangkan, bagaimanapun, bahwa serangkaian kasus uji berbasis kode relatif kecil sehubungan dengan perilaku lengkap yang diprogram. 
-\begin{figure}
+\begin{figure}[h!]
  \includegraphics[scale=1.2]{gambar/compareAB-whitebox}
  \centering
  \caption{Comparing code-based test case identification methods.}
 \end{figure}
+Gambar 2.4 menunjukkan hasil \textit{test case} yang diidentifikasi oleh dua metode berbasis kode. Seperti sebelumnya, metode A mengidentifikasi satu set kasus uji yang lebih besar daripada metode B. Apakah satu set kasus uji yang lebih besar tentu lebih baik? Ini adalah pertanyaan yang bagus, dan pengujian berbasis kode menyediakan cara-cara penting untuk mengembangkan jawaban. Perhatikan bahwa, untuk kedua metode, himpunan kasus uji sepenuhnya terkandung dalam himpunan perilaku yang diprogram. Karena metode berbasis kode didasarkan pada program, sulit membayangkan metode ini mengidentifikasi perilaku yang tidak diprogram. Sangat mudah untuk membayangkan, bagaimanapun, bahwa serangkaian kasus uji berbasis kode relatif kecil sehubungan dengan perilaku lengkap yang diprogram. 
 
-\section{Bahasa Pemrograman PHP}
-\label{php}
+\section{\textit{Unit Testing}[10]}
+\paragraph{}
+Tahap paling dalam pada pengujian perangkat lunak adalah \textit{unit testing}.Dalam \textit{unit testing}, kita menguji setiap unit kode secara individu, biasanya sebuah \textit{method}, dalam isolasi untuk melihat apakah jika diberikan suatu kondisi tertentu, apakah respons yang didapat akan sama dengan yang diharapkan (lihat Gambar 2.5). Memecah pengujian ke tingkat dasar memberi keyakinan bahwa setiap bagian dari aplikasi akan berperilaku seperti yang diharapkan dan memungkinkan untuk menutupi kasus di mana hal yang tidak terduga dapat terjadi dan menanganinya dengan cara yang tepat.
+\begin{figure}[h!]
+	\includegraphics[scale=1.5]{gambar/unittest}
+	\centering
+	\caption{Contoh struktur aplikasi yang menunjukkan kelas dan method. Method adalah "unit" yang akan diuji.}
+\end{figure}
+
+Pada contoh diatas, \textit{method} yang disorot adalah unit individual dari aplikasi ini yang perlu diuji. Jika tahu bahwa masing-masing \textit{method} pada kelas \textit{Calculator} berfungsi seperti yang diharapkan, maka kita yakin bahwa fitur-fitur aplikasi \textit{Calculator} tersebut telah berjalan sesuai harapan.
+
+Misalnya, kita ingin menguji apakah hasil dari \textit{method} dengan dua angka benar-benar menambahkannya untuk menghasilkan jumlah yang benar. Memecah kode menjadi \textit{unit-unit} ini membuat proses pengujian lebih mudah. Saat berurusan dengan \textit{unit} kecil dari sebuah aplikasi, kita memiliki pemahaman yang jelas tentang cara kerja unit tersebut dan hal-hal yang memungkinkan untuk salah pada potongan kode tertentu, sehingga memungkinkan untuk menutupi \textit{unit} dengan tes yang sesuai.
+
+Selain itu, saat melakukan pengujian dengan cara ini biasanya jelas jika kita telah memecah kode menjadi unit-unit. Jika harus menulis banyak tes berbeda untuk mencakup semua kemungkinan berbeda yang dapat dilalui \textit{method} ini, \textit{method} tersebut mungkin terlalu besar dan harus dipertimbangkan untuk melakukan \textit{refactoring} menjadi dua metode atau lebih dengan tanggung jawab yang sama. Sebaliknya, mungkin ada kasus di mana \textit{method} terlalu sederhana dan dapat dikombinasikan dengan beberapa fungsi lain untuk membuat \textit{method} yang lebih berguna. Sebagai seorang \textit{programmer} yang berpengalaman, kita harus mulai merasakan metode mana yang yang sudah "berukuran" baik dan mana yang tidak. Sepuluh baris sering merupakan aturan praktis yang baik untuk diikuti. Sebagai programmer yang baik, kita harus berusaha untuk memberikan kode yang paling mudah dibaca.
+
+Tes yang ditulis adalah cerita yang menjelaskan kode dari sebuah program. Apa yang ingin dibaca atau dilihat ketika pertama kali membaca kode dan mencoba memahami apa fungsinya? Konvensi penamaan variabel yang jelas, ringkas, nama kelas, nama file, dan tes dapat membantu membuat kode lebih jelas dan mudah dipelihara untuk orang lain.
+
+\section{\textit{Behavior-Driven Development}[11]}
+Behavior-Driven Development (BDD) adalah seperangkat praktik rekayasa perangkat lunak yang dirancang untuk membantu tim membangun dan memberikan perangkat lunak yang lebih bernilai dan berkualitas lebih cepat. Ini mengacu pada \textit{agile} dan \textit{lean practices} termasuk, khususnya, \textit{Test-Driven Development} (TDD) dan \textit{Domain-Driven Design} (DDD). Tetapi yang paling penting, BDD menyediakan bahasa umum berdasarkan kalimat-kalimat sederhana dan terstruktur yang diekspresikan dalam bahasa Inggris (atau dalam bahasa asli para pemangku kepentingan) yang memfasilitasi komunikasi antara anggota tim proyek dan pemangku kepentingan bisnis.
+
+Untuk lebih memahami cara kerja BDD, dengan BDD yang berevolusi dari TDD, kita harus membahasa sedikit tentang TDD. Test-Driven Development (TDD) adalah praktik pengembangan yang menggunakan \textit{unit test} untuk menentukan, merancang, dan memverifikasi kode yang akan ditulis. Sebelum menerapkan fungsionalitas, \textit{developer} menulis \textit{unit test} yang sengaja digagalkan untuk menunjukkan bagaimana fungsi ini seharusnya bekerja. Pada saat yang sama, pengujian gagal ini juga membuktikan bahwa implementasi saat ini belum mendukung fungsionalitas yang baru. Baru setelah itu \textit{developer} menulis kode program. Setelah \textit{unit testing} berlalu, \textit{developer} tahu bahwa fungsionalitas telah berhasil diimplementasikan. Pada tahap ini, mereka dapat meninjau kode mereka untuk merapikan dan menyempurnakan desain.
+
+BDD pada awalnya dirancang sebagai versi perbaikan TDD. BDD awalnya ditemukan oleh Dan North pada awal hingga pertengahan 2000-an sebagai cara yang lebih mudah untuk mengajar dan mempraktikkan Test-Driven Development (TDD). TDD, ditemukan oleh Kent Beck pada awal munculnya \textit{Agile Development}, itu adalah teknik efektif yang menggunakan \textit{unit test} untuk menentukan, merancang, dan memverifikasi kode program.
 
 \section{Bahasa Pemrograman HTML}
 \label{html}
+\paragraph{}
+HyperText Markup Language (HTML) adalah bahasa pengkodean komputer yang digunakan untuk mengubah teks biasa menjadi teks aktif untuk ditampilkan dan digunakan di web dan juga untuk memberikan teks biasa, tidak terstruktur, jenis struktur yang diandalkan manusia untuk membacanya. Tanpa semacam struktur yang digunakan pada html, teks biasa hanya akan berjalan bersama tanpa apapun untuk membedakan satu untaian kata dari yang lain.
 
-\section{Codeigniter}
+HTML terdiri dari penanda yang dikodekan yang disebut \textit{tag} yang mengelilingi dan membedakan bit teks, yang menunjukkan fungsi dan tujuan dari teks yang diberi tag. Tag tertanam secara langsung dalam dokumen teks biasa di mana mereka dapat diinterpretasikan oleh perangkat lunak komputer. Tag HTML menunjukkan sifat sebagian konten dan memberikan informasi penting tentangnya. Tag berdiri sendiri tidak ditampilkan dan berbeda dari konten yang sebenarnya mereka sampaikan.
+
+\section{Bahasa Pemrograman PHP [12]}
+\label{php}
+PHP (PHP Hypertext Pre-processor) adalah bahasa scripting yang disematkan HyperText Markup Language (HTML). Tujuan dari bahasa ini adalah untuk memungkinkan pembangunan halaman Web dinamis dengan cepat dan mudah. PHP bekerja bersama dengan server web dan dapat digunakan dengan berbagai sistem operasi, termasuk Microsoft Windows dan UNIX.
+
+PHP berbeda dari Common Gateway Interface (CGI) lainnya, yang ditulis dalam bahasa seperti Perl atau C, karena mengharuskan membuat program terpisah, yang menghasilkan HTML. PHP berbeda karena tertanam dalam dokumen HTML dengan tag awal dan akhir khusus yang memungkinkan untuk keluar dan masuk dari PHP. Ini memberikan waktu tampilan halaman yang cepat, keamanan tinggi dan transparansi bagi pengguna. Dengan PHP kita dapat memporoleh semua yang dapat dicapai dengan menulis aplikasi CGI terpisah, seperti membuat halaman web yang dinamis, pemrosesan formulir dan penanganan file.
+
+Sintaks PHP mirip dengan bahasa pemrograman C, C ++ dan Java. Jika  memiliki pengetahuan tentang bahasa-bahasa ini, maka akan menemukan bahwa bahasa PHP sangat akrab. PHP sederhana dan mudah untuk dipahami, jangan takut untuk mempelajari bahasa ini.
+
+Salah satu fasilitas terpenting dan terkuat dari PHP adalah kemampuannya untuk berinteraksi dengan berbagai macam basis data. Lebih dari 20 basis data yang berbeda saat ini didukung, memungkinkan pengembang PHP untuk membuat halaman Web dengan basis data yang mudah. 
+
+\section{Codeigniter [13]}
 \label{ci}
+\paragraph{}
+CodeIgniter adalah \textit{framework} aplikasi web yang bersifat \textit{open source} untuk bahasa PHP. CodeIgniter memiliki banyak fitur yang membuatnya menonjol dari \textit{framework} lainnya. Tidak seperti beberapa \textit{framework} PHP lain yang, dokumentasinya sangat menyeluruh dan lengkap, mencakup setiap aspek \textit{framework}. 
+
+Di sisi pemrograman, CodeIgniter kompatibel dengan PHP4 dan PHP5, sehingga akan berjalan di sebagian besar web host di luar sana. CodeIgniter juga menggunakan pola desain \textit{Model View Controller} (MVC), yang merupakan cara untuk mengatur aplikasi Anda menjadi tiga bagian berbeda: \textit{model} — lapisan abstraksi basis data, \textit{view} — file tampilan depan, dan \textit{control} — logika bisnis aplikasi. Pada intinya, CodeIgniter juga memanfaatkan pola desain \textit{Singleton} secara ekstensif. Ini adalah cara untuk memuat kelas sehingga jika mereka dipanggil beberapa kali, instance kelas yang sama akan dikembalikan. Ini sangat berguna untuk koneksi basis data, karena hanya ingin satu koneksi setiap kali kelas digunakan.
+
 
 \section{Code Coverage}
 \label{codecoverage}
 
-\section{Xampp}
-\label{xampp}
-
-\section{Travis CI}
-\label{travis}
 
 
