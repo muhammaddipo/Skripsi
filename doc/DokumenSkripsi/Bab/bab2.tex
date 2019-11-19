@@ -124,8 +124,20 @@ CodeIgniter adalah \textit{framework} aplikasi web yang bersifat \textit{open so
 Di sisi pemrograman, CodeIgniter kompatibel dengan PHP4 dan PHP5, sehingga akan berjalan di sebagian besar web host di luar sana. CodeIgniter juga menggunakan pola desain \textit{Model View Controller} (MVC), yang merupakan cara untuk mengatur aplikasi Anda menjadi tiga bagian berbeda: \textit{model} — lapisan abstraksi basis data, \textit{view} — file tampilan depan, dan \textit{control} — logika bisnis aplikasi. Pada intinya, CodeIgniter juga memanfaatkan pola desain \textit{Singleton} secara ekstensif. Ini adalah cara untuk memuat kelas sehingga jika mereka dipanggil beberapa kali, instance kelas yang sama akan dikembalikan. Ini sangat berguna untuk koneksi basis data, karena hanya ingin satu koneksi setiap kali kelas digunakan.
 
 
-\section{Code Coverage}
+\section{Code Coverage [16]}
 \label{codecoverage}
+\textit{Code Coverage} adalah metrik yang digunakan untuk mengkarakterisasi tingkat di mana beberapa  kode aplikasi telah dieksekusi setelah dilakukannya tes. Ini dihitung dengan hasil berbentuk persentase, dihitung dengan pembagian $\frac{Code{\tiny exec}}{Code{\tiny region}}$, menunjukkan jumlah kode sumber yang sudah dieksekusi (Code{\tiny exec}) berkenaan dengan jumlah total kode sumber yang harus dilakukan (Code{\tiny region}).
 
+Semakin tinggi \textit{code coverage}-nya, semakin besar jumlah kode yang dikerjakan selama eksekusi pengujian sehubungan dengan \textit{region} kode yang diuji. Meskipun telah ditunjukkan bahwa cakupan kode yang tinggi tidak selalu berarti deteksi \textit{bug} yang tinggi. Namun, tidak mungkin untuk menyatakan apa pun tentang area kode yang tidak pernah dijalankan. Dengan demikian, \textit{code coverage} yang digunakan sebagai relatif \textit{measure} berfungsi sebagai indikator yang cocok untuk pengujian yang baik.
 
+Secara umum, \textit{code coverage} dilakukan dengan menginstruksikan kode aplikasi dan kemudian memperoleh data cakupan dari bagian instrumentasi. Ada beberapa alat yang menyediakan informasi seperti itu, misalnya, JaCoCo4. Namun, dalam beberapa konteks, peneliti tidak diizinkan untuk melakukan instrumentasi, karena pengujian tidak dilakukan di tingkat pengembangan. Dalam kasus seperti itu, hanya mungkin untuk melakukan proses pemantauan yang tidak perlu memodifikasi aplikasi yang sudah di-\textit{compile}. Untuk Android, kami menggunakan ddmlib5 \textit{tracer} untuk melihat ketika metode dipanggil saat melakukan eksekusi \textit{test case}.
 
+Ada beberapa kriteria untuk melakukan \textit{code coverage}, yaitu:
+\begin{itemize}
+\item \textit{Statemen Coverage} --- Mengeksekusi pernyataan program secara individual dan mengamati semua hasilnya. \textit{Statemen coverage} 100\% berarti semua pernyataan telah dieksekusi setidaknya satu kali.
+\item \textit{Branch Coverage} --- Mengeksekusi \textit{branch} yang ada pada \textit{statement} program. \textit{Branch coverage} 100\% berarti semua branch yang ada di program sudah berhasil di eksekusi setidaknya satu kali.
+\item \textit{Condition coverage} --- Mengeksekusi semua kondisi yang ada pada statement kode program.
+\textit{Condition coverage} 100\% berarti semua kemungkinan kombinasi nilai dari kondisi yang mempengaruhi jalur telah dieksplorasi dalam  pengujian.
+\item \textit{Branch\&Condition Coverage} --- Gabungan dari \textit{branch coverage} dan juga \textit{condition coverage}.
+\item \textit{Path Coverage} --- Mengekesekusi semua kemungkinan kombinasi pada kode program, bisa dibilang ini gabungan semua dari kriteria sebelumnya. \textit{Path coverage} 100\% berarti semua kode pada program sudah berhasil dieksekusi dan semua kemungkinan kode program sudah berhasil dilewati setidaknya satu kali.
+\end{itemize}
