@@ -98,8 +98,40 @@ Terlepas dari kelebihannya, banyak orang masih kesulitan mengadopsi dan mengguna
 
 Faktanya, banyak \textit{unit testing} tradisional, ditulis dengan atau tanpa TDD, secara erat digabungkan dengan implementasi kode tertentu. Mereka fokus pada metode atau fungsi yang mereka uji, bukan pada apa yang harus dilakukan kode dalam  bisnis \textit{term}.
 
+BDD juga berfungsi dengan baik untuk \textit{requirements analysis}. Bekerja dengan rekan analis bisnis Chris Matts, North mulai menerapkan apa yang telah ia pelajari ke ruang \textit{requirements analysis}. Eric Evans memperkenalkan gagasan \textit{Domain-Driven Design}, yang mempromosikan penggunaan bahasa yang dapat dimengerti dimanapun agar dapat dipahami oleh  orang dari sisi bisnis untuk menggambarkan dan memodelkan suatu sistem. Visi North dan Matts adalah untuk menciptakan bahasa untuk dimengerti oleh siapapun yang dapat digunakan oleh analis bisnis untuk mendefinisikan persyaratan secara jelas, dan itu juga dapat dengan mudah diubah menjadi \textit{acceptance tests} yang otomatis. Untuk mengimplementasikan visi ini, mereka mulai mengekspresikan \textit{acceptance criteria} untuk \textit{user stories} dalam bentuk contoh yang terstruktur, yang dikenal sebagai "skenario," seperti ini:\\
+\texttt{\textbf{Given} a customer has a current account \\
+\textbf{When} the customer transfers funds from this account to an overseas account\\
+\textbf{Then} the funds should be deposited in the overseas account\\
+\textbf{And} the transaction fee should be deducted from the current account\\}
+\textit{Keyword} dari skenario yaitu \textit{Given,When} dan \textit{Then}, maknda dari masing-masing \textit{keyword} ialah: 
+\begin{itemize}
+ \item \textit{Given} menjelaskan prekondisi untuk skenario dan mempersiapkan \textit{environment} untuk tes.
+ \item \textit{When} menjelaskan tindakan yang sedang dilakukan pada tes.
+ \item \textit{Then} menjelaskan hasil yang diharapkan.
+\end{itemize}
 
-\section{Bahasa Pemrograman HTML}
+Pemilik bisnis dapat dengan mudah memahami skenario yang ditulis seperti ini. Ini memberikan tujuan yang jelas dan obyektif untuk setiap cerita dalam hal apa yang perlu dikembangkan dan apa yang perlu diuji.
+
+Notasi ini akhirnya berkembang menjadi bentuk yang umum digunakan, dan sering disebut sebagai Gherkin. Dengan \textit{tools} yang tepat, skenario yang ditulis dalam formulir ini dapat diubah menjadi \textit{acceptance criteria} yang otomatis dan dapat dieksekusi secara otomatis juga kapan pun diperlukan. 
+
+Ketika sebuah tim yang mempraktikkan BDD memutuskan untuk mengimplementasikan sebuah fitur, mereka bekerja bersama dengan pengguna dan \textit{stakeholders} lainnya untuk mendefinisikan \textit{user stories} dan skenario tentang apa yang diharapkan oleh pengguna untuk diberikan oleh fitur ini. Secara khusus, para pengguna membantu mendefinisikan sekumpulan contoh konkret yang menggambarkan \textit{key outcome} dari fitur tersebut. (Lihat Gambar 2.7)
+\begin{figure}
+	\includegraphics[scale=1.2]{gambar/skenario}
+	\centering
+	\caption{Examples play a primary role in BDD, helping everyone understand the
+requirements more clearly}
+\end{figure}
+
+\textit{Examples} ini menggunakan kosakata umum dan dapat dengan mudah dipahami oleh pengguna dan anggota tim \textit{developer}. Mereka biasanya diekspresikan menggunakan Notasi \textit{Given} ... \textit{When} ... \textit{Then} yang sama seperti contoh tadi di paragraf ke 7. Misalnya, contoh sederhana yang menggambarkan fitur "\textit{Transfer funds between a client’s accounts}" mungkin terlihat seperti ini:\\
+\texttt{Scenario: Transferring money to a savings account\\
+ Given I have a current account with 1000.00\\
+ And I have a savings account with 2000.00\\
+ When I transfer 500.00 from my current account to my savings account\\
+ Then I should have 500.00 in my current account\\
+ And I should have 2500.00 in my savings account\\}
+ 
+\textit{Examples} memainkan peran utama dalam BDD, hanya karena mereka adalah cara yang sangat efektif untuk mengkomunikasikan persyaratan yang jelas, tepat, dan tidak ambigu. Spesifikasi yang ditulis dalam bahasa alami, ternyata, merupakan cara komunikasi yang sangat buruk, karena ada begitu banyak ruang untuk ambiguitas, asumsi, dan kesalahpahaman. Contohnya adalah cara yang bagus untuk mengatasi keterbatasan ini dan mengklarifikasi persyaratan. \textit{Examples} adalah cara yang bagus untuk mengatasi keterbatasan ini dan mengklarifikasi persyaratan. 
+\section{Bahasa Pemrograman HTML [13]}
 \label{html}
 \paragraph{}
 HyperText Markup Language (HTML) adalah bahasa pengkodean komputer yang digunakan untuk mengubah teks biasa menjadi teks aktif untuk ditampilkan dan digunakan di web dan juga untuk memberikan teks biasa, tidak terstruktur, jenis struktur yang diandalkan manusia untuk membacanya. Tanpa semacam struktur yang digunakan pada html, teks biasa hanya akan berjalan bersama tanpa apapun untuk membedakan satu untaian kata dari yang lain.
@@ -124,15 +156,15 @@ CodeIgniter adalah \textit{framework} aplikasi web yang bersifat \textit{open so
 Di sisi pemrograman, CodeIgniter kompatibel dengan PHP4 dan PHP5, sehingga akan berjalan di sebagian besar web host di luar sana. CodeIgniter juga menggunakan pola desain \textit{Model View Controller} (MVC), yang merupakan cara untuk mengatur aplikasi Anda menjadi tiga bagian berbeda: \textit{model} — lapisan abstraksi basis data, \textit{view} — file tampilan depan, dan \textit{control} — logika bisnis aplikasi. Pada intinya, CodeIgniter juga memanfaatkan pola desain \textit{Singleton} secara ekstensif. Ini adalah cara untuk memuat kelas sehingga jika mereka dipanggil beberapa kali, instance kelas yang sama akan dikembalikan. Ini sangat berguna untuk koneksi basis data, karena hanya ingin satu koneksi setiap kali kelas digunakan.
 
 
-\section{Code Coverage [16]}
+\section{Code Coverage}
 \label{codecoverage}
-\textit{Code Coverage} adalah metrik yang digunakan untuk mengkarakterisasi tingkat di mana beberapa  kode aplikasi telah dieksekusi setelah dilakukannya tes. Ini dihitung dengan hasil berbentuk persentase, dihitung dengan pembagian $\frac{Code{\tiny exec}}{Code{\tiny region}}$, menunjukkan jumlah kode sumber yang sudah dieksekusi (Code{\tiny exec}) berkenaan dengan jumlah total kode sumber yang harus dilakukan (Code{\tiny region}).
+\textit{Code Coverage} adalah metrik yang digunakan untuk mengkarakterisasi tingkat di mana beberapa  kode aplikasi telah dieksekusi setelah dilakukannya tes. Ini dihitung dengan hasil berbentuk persentase, dihitung dengan pembagian $\frac{Code{\tiny exec}}{Code{\tiny region}}$, menunjukkan jumlah kode sumber yang sudah dieksekusi (Code{\tiny exec}) berkenaan dengan jumlah total kode sumber yang harus dilakukan (Code{\tiny region})[16].
 
-Semakin tinggi \textit{code coverage}-nya, semakin besar jumlah kode yang dikerjakan selama eksekusi pengujian sehubungan dengan \textit{region} kode yang diuji. Meskipun telah ditunjukkan bahwa cakupan kode yang tinggi tidak selalu berarti deteksi \textit{bug} yang tinggi. Namun, tidak mungkin untuk menyatakan apa pun tentang area kode yang tidak pernah dijalankan. Dengan demikian, \textit{code coverage} yang digunakan sebagai relatif \textit{measure} berfungsi sebagai indikator yang cocok untuk pengujian yang baik.
+Semakin tinggi \textit{code coverage}-nya, semakin besar jumlah kode yang dikerjakan selama eksekusi pengujian sehubungan dengan \textit{region} kode yang diuji. Meskipun telah ditunjukkan bahwa cakupan kode yang tinggi tidak selalu berarti deteksi \textit{bug} yang tinggi. Namun, tidak mungkin untuk menyatakan apa pun tentang area kode yang tidak pernah dijalankan. Dengan demikian, \textit{code coverage} yang digunakan sebagai relatif \textit{measure} berfungsi sebagai indikator yang cocok untuk pengujian yang baik[16].
 
-Secara umum, \textit{code coverage} dilakukan dengan menginstruksikan kode aplikasi dan kemudian memperoleh data cakupan dari bagian instrumentasi. Ada beberapa alat yang menyediakan informasi seperti itu, misalnya, JaCoCo4. Namun, dalam beberapa konteks, peneliti tidak diizinkan untuk melakukan instrumentasi, karena pengujian tidak dilakukan di tingkat pengembangan. Dalam kasus seperti itu, hanya mungkin untuk melakukan proses pemantauan yang tidak perlu memodifikasi aplikasi yang sudah di-\textit{compile}. Untuk Android, kami menggunakan ddmlib5 \textit{tracer} untuk melihat ketika metode dipanggil saat melakukan eksekusi \textit{test case}.
+Secara umum, \textit{code coverage} dilakukan dengan menginstruksikan kode aplikasi dan kemudian memperoleh data cakupan dari bagian instrumentasi. Ada beberapa alat yang menyediakan informasi seperti itu, misalnya, JaCoCo4. Namun, dalam beberapa konteks, peneliti tidak diizinkan untuk melakukan instrumentasi, karena pengujian tidak dilakukan di tingkat pengembangan. Dalam kasus seperti itu, hanya mungkin untuk melakukan proses pemantauan yang tidak perlu memodifikasi aplikasi yang sudah di-\textit{compile}. Untuk Android, kami menggunakan ddmlib5 \textit{tracer} untuk melihat ketika metode dipanggil saat melakukan eksekusi \textit{test case}[16].
 
-Ada beberapa kriteria untuk melakukan \textit{code coverage}, yaitu:
+Ada beberapa kriteria untuk melakukan \textit{code coverage}, yaitu [17] :
 \begin{itemize}
 \item \textit{Statemen Coverage} --- Mengeksekusi pernyataan program secara individual dan mengamati semua hasilnya. \textit{Statemen coverage} 100\% berarti semua pernyataan telah dieksekusi setidaknya satu kali.
 \item \textit{Branch Coverage} --- Mengeksekusi \textit{branch} yang ada pada \textit{statement} program. \textit{Branch coverage} 100\% berarti semua branch yang ada di program sudah berhasil di eksekusi setidaknya satu kali.
