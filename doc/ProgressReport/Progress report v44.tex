@@ -65,39 +65,46 @@ Tipe Laporan : {\bf \tipePR} -
 		}
 		
 \section{Latar Belakang}
-Pengujian perangkat lunak merupakan salah satu tahapan dari \textit{software development life cycle}. \textit{Software Development Life Cycle}(SDLC) merupakan metodologi dari pengembangan perangkat lunak, metode ini dibagi menjadi beberapa fase seperti\textit{ analysis, design,  coding,  testing, installation} dan \textit{maintenance}. \textit{Testing}/Pengujian perangkat lunak adalah proses untuk mencari kesalahan pada setiap \textit{item} perangkat lunak, mencatat hasilnya, mengevaluasi setiap aspek pada setiap komponen (sistem) dan mengevaluasi fasilitas-fasilitas dari perangkat lunak yang akan dikembangkan.Pengujian pada perangkat lunak merupakan tahapan yang wajib dilakukan sebelum perangkat lunak tersebut digunakan, agar memastikan sudah tidak ada \textit{error/bug} pada perangkat lunak yang sedang dikembangkan. Pengujian perangkat lunak memakan \textit{resource} yang berat, baik itu waktu maupun waktu maupun tenaga kerja, karena untuk melakukan pengujian perangkat lunak dibutuhkan \textit{developer} ahli \textit{Software Quality Assurance}(SQA). SQA yang bertanggung jawab untuk memastikan bahwa perangkat lunak yang sedang dikembangkan bebas dari \textit{bug} agar siap untuk di-\textit{release} dan digunakan oleh pengguna.
+Pengujian perangkat lunak merupakan salah satu tahapan dari \textit{software development life cycle}. \textit{Software Development Life Cycle}(SDLC) merupakan metodologi dari pengembangan perangkat lunak, metode ini dibagi menjadi beberapa fase seperti\textit{ analysis, design,  coding,  testing, installation} dan \textit{maintenance}. Pengujian perangkat lunak adalah proses untuk mencari kesalahan pada setiap komponen perangkat lunak, mencatat hasilnya, mengevaluasi setiap aspek pada setiap komponen dan mengevaluasi fitur-fitur dari perangkat lunak yang akan dikembangkan. Pengujian pada perangkat lunak merupakan tahapan yang wajib dilakukan sebelum perangkat lunak tersebut digunakan, agar memastikan sudah tidak ada kesalahan/\textit{bug} pada perangkat lunak yang sedang dikembangkan. Pengujian perangkat lunak memakan sumberdaya yang berat, baik itu waktu maupun waktu maupun tenaga kerja, karena untuk melakukan pengujian perangkat lunak dibutuhkan pengembang dengan keahlian \textit{Software Quality Assurance}(SQA). SQA yang bertanggung jawab untuk memastikan bahwa perangkat lunak yang sedang dikembangkan bebas dari \textit{bug} agar siap untuk dirilis dan digunakan oleh pengguna.
 
-\textit{Unit testing} merupakan tahapan pertama dari pengujian perangkat lunak. \textit{Unit Testing} adalah proses pengujian bagian kode secara individu, suatu komponen, untuk menentukan apakah kode tersebut berfungsi dengan semestinya. Salah satu teknik untuk membuat \textit{unit testing} yaitu dengan code generation. \textit{Code generation} adalah teknik membuat suatu program yang membuat program lain. Menggunakan \textit{code generation} untuk \textit{unit testing} membuatnya mudah untuk mempertahankan dan memperpanjang \textit{unit testing}.
-
-Ada beberapa metode untuk melakukan pengujian perangkat lunak, salah satunya yaitu \textit{Test-Driven Development}(TDD). TDD adalah praktik pemrograman yang menginstruksikan pengembang perangkat lunak untuk menulis kode baru hanya ketika tes yang dilakukan secara otomatis gagal, dan menghilangkan duplikasi. Tujuan TDD adalah kode bersih yang berfungsi. Tetapi, TDD memiliki masalah, bahwa TDD berfokus pada keadaan sistem daripada \textit{behaviour} yang diinginkan oleh sistem, dan kode pada pengujian \textit{highly coupled} dengan implementasi sistem yang ada. Maka dari itu metode yang akan digunakan pada skripsi ini adalah \textit{Behaviour-Driven Development}.
-
-\textit{Behaviour-Driven Development}(BDD) merupakan evolusi dari TDD untuk menyelesaikan masalah yang ada pada TDD. BDD adalah pendekatan pengembangan perangkat lunak yang \textit{agile} untuk mendorong kolaborasi antara semua peserta dalam proses pengembangan perangkat lunak.
-
-Prinsip inti dari BDD adalah "orang bisnis dan teknologi harus merujuk ke sistem yang sama dengan cara yang sama". Berbeda dengan TDD yang berpatokan pada test untuk \textit{developer} lebih jauh program yang akan digunakan, BDD berpatokan pada keinginan \textit{stakeholder/customer} untuk mengembangkan programnya. Untuk mencapai kesepakatan antara \textit{developer} dan \textit{stakeholder/customer}, maka dibutuhkan \textit{language} untuk menspesifikasikan \textit{behaviour} sebuah sistem agar kedua pihak paham, dan dapat mewujudkan hal berikut:
+Pengujian perangkat lunak memiliki beberapa tahapan, yaitu:
 \begin{itemize}
-\item \textit{Stakeholder/Customer} untuk menentukan persyaratan dari perspektif bisnis.
+	\item \textit{Unit Test} : Tes komponen secara individu.
+	\item \textit{Integration Test} : Tes komponen yang sudah terintegrasi.
+	\item \textit{System Test} : Tes keseluruhan sistem.
+	\item \textit{Acceptance Test} : Tes sistem akhir.
+\end{itemize}
+Kita akan membahas tentang \textit{unit testing}, \textit{unit testing} merupakan tahapan pertama dari pengujian perangkat lunak. \textit{Unit Testing} adalah proses pengujian bagian kode secara individu, suatu komponen, untuk menentukan apakah kode tersebut berfungsi dengan semestinya. Salah satu teknik untuk membuat \textit{unit testing} yaitu dengan code generation. \textit{Code generation} adalah teknik membuat suatu program yang membuat program lain. Menggunakan \textit{code generation} untuk \textit{unit testing} membuatnya dapat digunakan dalam jangka yang panjang.
+
+Salah satu teknik pengembangan perangkat lunak ialah \textit{Test-Driven Development}(TDD). Test-Driven Development (TDD) adalah praktik pengembangan yang menggunakan \textit{unit test} untuk menentukan, merancang, dan memverifikasi kode yang akan ditulis. Sebelum menerapkan fungsionalitas, pengembang menulis \textit{unit test} yang sengaja digagalkan untuk menunjukkan bagaimana fungsi ini seharusnya bekerja. Pada saat yang sama, pengujian gagal ini juga membuktikan bahwa implementasi saat ini belum mendukung fungsionalitas yang baru. Baru setelah itu pengembang menulis kode program. Setelah \textit{unit testing} berlalu, pengembang tahu bahwa fungsionalitas telah berhasil diimplementasikan. Pada tahap ini, mereka dapat meninjau kode mereka untuk merapikan dan menyempurnakan desain. Ada satu lagi teknik pengembangan perangkat lunak, yang dianggap para ahli memiliki kelebihan yang TDD tidak miliki, yaitu \textit{Behaviour-Driven Development}(BDD).
+
+\textit{Behaviour-Driven Development}(BDD) merupakan pengembangan dari TDD untuk menyelesaikan masalah yang ada pada TDD. BDD adalah seperangkat praktik rekayasa perangkat lunak yang dirancang untuk membantu tim membangun dan memberikan perangkat lunak yang memfasilitasi komunikasi antara anggota tim proyek dan pemangku kepentingan bisnis.
+
+Prinsip inti dari BDD adalah "orang bisnis dan teknologi harus merujuk ke sistem yang sama dengan cara yang sama". Berbeda dengan TDD yang berpatokan pada tes untuk pengembang lebih jauh program yang akan digunakan, BDD berpatokan pada keinginan \textit{stakeholder} untuk mengembangkan programnya. Untuk mencapai kesepakatan antara pengembang dan \textit{stakeholder}, maka dibutuhkan \textit{language} untuk menspesifikasikan \textit{behaviour} sebuah sistem agar kedua pihak paham, dan dapat mewujudkan hal berikut:
+\begin{itemize}
+\item \textit{Stakeholder} untuk menentukan persyaratan dari perspektif bisnis.
 \item Analis bisnis untuk melampirkan contoh konkret (skenario atau \textit{acceptance tests}) yang menjelaskan \textit{behaviour} sistem.
-\item \textit{Developer} untuk mengimplementasikan \textit{behaviour} sistem yang diperlukan secara TDD.
+\item Pengembang untuk mengimplementasikan \textit{behaviour} sistem yang diperlukan secara TDD.
 \end{itemize}
 	
-Pengujian dengan basis \textit{behaviour specification} akan berfokus kepada hal yang \textit{stakeholder/customer} harapkan pada suatu sistem dengan \textit{behaviour} yang sudah di spesifikasikan. Pengujian akan berawal dengan membuat \textit{scenario} yang berisi:
+Pengujian dengan basis \textit{behaviour specification} akan berfokus kepada hal yang \textit{stakeholder} harapkan pada suatu sistem dengan \textit{behaviour} yang sudah di spesifikasikan. Pengujian akan berawal dengan membuat \textit{scenario} yang berisi:
 \begin{enumerate}
 \item \textit{Context/Starting state} : Posisi awal sistem sebelum terjadinya suatu \textit{event}.
 \item \textit{Event} : \textit{Task} yang dilakukan oleh pengguna pada sistem.
 \item \textit{Outcome} : Hasil yang diharapkan dari sistem.
 \end{enumerate}
-\textit{Developer} akan menjadikan \textit{scenario} sebagai patokan dasar bekerjanya suatu sistem, dan akan melakukan pengujian berbasis \textit{scenario}. Pengujian dilakukan untuk memastikan bahwa sistem sudah bekerja sesuai apa yang \textit{stakeholder/customer} harapkan, dan jika \textit{scenario} berhasil dilakukan, maka sistem sudah siap untuk digunakan.
+Pengembang akan menjadikan \textit{scenario} sebagai patokan dasar bekerjanya suatu sistem, dan akan melakukan pengujian berbasis \textit{scenario}. Pengujian dilakukan untuk memastikan bahwa sistem sudah bekerja sesuai apa yang \textit{stakeholder} harapkan, dan jika \textit{scenario} berhasil dilakukan, maka sistem sudah siap untuk digunakan.
 
-Pada skripsi ini akan dibangun sebuah perangkat pengujian yang mengimplementasi behaviour specification untuk menguji sebuah perangkat lunak.
+Pada skripsi ini akan dibangun sebuah perangkat pengujian yang mengimplementasi \textit{behaviour specification} untuk menguji sebuah perangkat lunak.
 \section{Rumusan Masalah}
 \begin{itemize}
-\item Bagaimana cara kerja pengerjaan Pengujian Berbasis \textit{Behavior Specification}?
-\item Bagaimana implementasi perangkat lunak yang dapat menguji program berbasis \textit{Behavior Specification} ?	
+\item Bagaimana cara kerja pengujian berbasis \textit{behavior specification}?
+\item Bagaimana implementasi perangkat lunak yang dapat menguji program berbasis \textit{behavior specification} ?	
 \end{itemize}
 \section{Tujuan}
 \begin{itemize}
-\item Mempelajari cara kerja Pengujian Berbasis \textit{Behaviour Specification}
-\item Menghasilkan perangkat penguji yang dapat menguji sebuah perangkat lunak berbasiskan \textit{Behaviour Specification}.
+\item Mempelajari cara kerja pengujian berbasis \textit{behaviour specification}
+\item Menghasilkan perangkat penguji yang dapat menguji sebuah perangkat lunak berbasiskan \textit{behaviour specification}.
 \end{itemize}
 \section{Detail Perkembangan Pengerjaan Skripsi}
 Detail bagian pekerjaan skripsi sesuai dengan rencana kerja/laporan perkembangan terakhir :
@@ -105,12 +112,13 @@ Detail bagian pekerjaan skripsi sesuai dengan rencana kerja/laporan perkembangan
 		\item \textbf{Studi literatur mengenai pengujian perangkat lunak, \textit{unit testing}, dan \textit{behaviour specification}}\\
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
 		{\bf Hasil :} Studi literatur telah dilakukan dengan membaca berbagai buku yang berkaitan dengan pengujian perangkat, \textit{unit testing}, dan \textit{behaviour specification}. Buku yang digunakan untuk referensi yaitu \textit{Software Testing: A Craftsman’s Approach, Fourth Edition}, \textit{Software Testing and Continuous Quality Improvement, Third Edition}, \textit{Testing Python: Applying Unit Testing, TDD, BDD and Acceptance Testing}, \textit{BDD in Action: Behavior-Driven Development for the whole software lifecycle}, Software Testing and Quality Assurance Theory and Practice, dan The Journal of Systems \& Software.
-		
+	
+\section*{Pengujian Perangkat Lunak}	
 Pandangan umum pengujian perangkat lunak adalah bahwa kegiatan ini adalah untuk menemukan \textit{bug}. Tujuan pengujian perangkat lunak adalah untuk memenuhi syarat kualitas program perangkat lunak dengan mengukur atribut dan kemampuannya terhadap ekspektasi dan standar yang berlaku. Pengujian perangkat lunak juga menyediakan informasi berharga untuk upaya pengembangan perangkat lunak.
 
-Kualitas perangkat lunak adalah sesuatu yang diinginkan semua orang. Manajer tahu bahwa mereka menginginkan kualitas tinggi, pengembangan perangkat lunak tahu mereka ingin menghasilkan produk yang berkualitas, dan pengguna bersikeras bahwa perangkat lunak bekerja secara konsisten dan dapat diandalkan.
+Semua orang ingin perangkat lunak yang memiliki kualitas tinggi. Manajer tahu bahwa mereka menginginkan kualitas tinggi, pengembangan perangkat lunak tahu mereka ingin menghasilkan produk yang berkualitas, dan pengguna bersikeras bahwa perangkat lunak bekerja secara konsisten dan dapat diandalkan.
 
-Banyak kelompok kualitas perangkat lunak mengembangkan \textit{software quality assurance plan}, dimana hal itu sama dengan \textit{test plans}. Rencana jaminan kualitas perangkat lunak dapat mencakup berbagai kegiatan di luar yang termasuk dalam \textit{test plan}. \textit{Quality assurance plan} mencakup keseluruhan kualitas, rencana pengujian adalah salah satu alat kontrol kualitas dari rencana jaminan kualitas.
+Banyak kelompok kualitas perangkat lunak mengembangkan \textit{software quality assurance plan}, dimana hal itu sama dengan \textit{test plans}. Rencana jaminan kualitas perangkat lunak dapat mencakup berbagai kegiatan di luar yang termasuk dalam rencana tes. \textit{Quality assurance plan} mencakup keseluruhan kualitas, rencana pengujian adalah salah satu alat kontrol kualitas dari rencana jaminan kualitas.
 
 Pada pembahasan pengujian perangkat lunak, ada \textit{term} yang biasa digunakan, yaitu:
 \begin{itemize}
@@ -121,17 +129,28 @@ Pada pembahasan pengujian perangkat lunak, ada \textit{term} yang biasa digunaka
 \item \textbf{Test} --- \textit{Testing} jelas berkaitan dengan  \textit{errors, faults, failures, and incidents}. \textit{Test} adalah tindakan melatih perangkat lunak dengan \textit{test case}. \textit{Test} memiliki dua tujuan berbeda: untuk menemukan \textit{failures} atau untuk menunjukkan eksekusi yang benar.
 \item \textbf{Test case} --- \textit{Test case} memiliki identitas dan dikaitkan dengan perilaku program. Ini juga memiliki serangkaian input dan output yang diharapkan.
 \end{itemize}
+\begin{figure}[h!]
+	\includegraphics[scale=0.5]{../DokumenSkripsi/gambar/fault}
+	\centering
+	\caption{Rantai ancaman.}
+\end{figure}
 \begin{figure}
-	\includegraphics[scale=1.2]{../DokumenSkripsi/gambar/cycle}
+	\includegraphics[scale=1.0]{../DokumenSkripsi/gambar/cycle2}
 	\centering
 	\caption{Siklus hidup pengujian.}
 \end{figure}
-Gambar 1 menggambarkan model siklus hidup untuk pengujian. Perhatikan bahwa, dalam fase pengembangan, tiga peluang muncul untuk membuat \textit{error}, yang menghasilkan \textit{fault} yang dapat menyebar melalui proses \textit{development}. Langkah resolusi \textit{fault} adalah kesempatan lain untuk \textit{error} (dan \textit{fault} baru). Ketika suatu perbaikan menyebabkan perangkat lunak yang sebelumnya benar untuk berperilaku salah, perbaikannya kurang.
+Gambar 2 menggambarkan model siklus hidup untuk pengujian. Perhatikan bahwa, dalam fase pengembangan, tiga peluang muncul untuk membuat \textit{error}, yang menghasilkan \textit{fault} yang dapat menyebar melalui proses \textit{development}. Langkah resolusi \textit{fault} adalah kesempatan lain untuk \textit{error} (dan \textit{fault} baru). Ketika suatu perbaikan menyebabkan perangkat lunak yang sebelumnya benar untuk berperilaku salah, perbaikannya kurang.
 
-Dari urutan \textit{term} ini, dapat dilihat bahwa \textit{test case} menempati posisi sentral dalam pengujian. Proses pengujian dapat dibagi lagi menjadi langkah-langkah terpisah: \textit{test planning, test case development}, menjalankan \textit{test case}, dan mengevaluasi hasil pengujian.Untuk \textit{test case} ada dua pendekatan mendasar digunakan untuk mengidentifikasi \textit{test case}; secara tradisional, ini disebut pengujian fungsional dan struktural. \textit{Specification-based} dan \textit{code-based} adalah nama yang lebih deskriptif. Kedua pendekatan memiliki beberapa metode identifikasi \textit{test case} yang berbeda; mereka umumnya hanya disebut metode pengujian.
+Dari urutan \textit{term} ini, dapat dilihat bahwa \textit{test case} menempati posisi sentral dalam pengujian. Proses pengujian dapat dibagi lagi menjadi langkah-langkah terpisah: \textit{test planning, test case development}, menjalankan \textit{test case}, dan mengevaluasi hasil pengujian.Untuk \textit{test case} ada tiga pendekatan mendasar digunakan untuk mengidentifikasi \textit{test case}, yaitu:
+\begin{itemize}
+	\item \textit{Specification-Based/Black-box}
+	\item \textit{Code-Based/White-box}
+	\item \textit{Grey-box}
+\end{itemize} 
 
- 
-Alasan bahwa pengujian \textit{Specification-Based/Black-box Testing}. pada awalnya disebut \textit{functional testing} adalah bahwa setiap program dapat dianggap sebagai fungsi yang memetakan nilai dari domain input ke nilai dalam rentang outputnya. Gagasan ini umumnya digunakan dalam \textit{engineering}, ketika suatu sistem dianggap sebagai \textit{black box}. Ini mengarah pada istilah sinonim lainnya — pengujian \textit{black-box}, di mana konten (implementasi) kotak hitam tidak diketahui, dan fungsi kotak hitam dipahami sepenuhnya dalam hal input dan outputnya (lihat Gambar 2). Sering kali, pengujian beroperasi sangat efektif dengan pengetahuan \textit{black box}; pada kenyataannya, ini adalah pusat orientasi objek. Sebagai contoh, kebanyakan orang berhasil mengoperasikan mobil dengan hanya pengetahuan "\textit{black box}".
+
+\subsection*{\textit{Specification-Based/Black-box Testing}}
+Alasan bahwa pengujian berbasis spesifikasi pada awalnya disebut \textit{functional testing} adalah bahwa setiap program dapat dianggap sebagai fungsi yang memetakan nilai dari domain input ke nilai dalam rentang outputnya. Gagasan ini umumnya digunakan dalam \textit{engineering}, ketika suatu sistem dianggap sebagai \textit{black box}. Ini mengarah pada istilah sinonim lainnya — pengujian \textit{black-box}, di mana konten (implementasi) kotak hitam tidak diketahui, dan fungsi kotak hitam dipahami sepenuhnya dalam hal input dan outputnya (lihat Gambar 3). Sering kali, pengujian beroperasi sangat efektif dengan pengetahuan \textit{black box}; pada kenyataannya, ini adalah pusat orientasi objek. Sebagai contoh, kebanyakan orang berhasil mengoperasikan mobil dengan hanya pengetahuan "\textit{black box}".
 \begin{figure}[h!]
 	\includegraphics[scale=1.0]{../DokumenSkripsi/gambar/blackbox}
 	\centering
@@ -140,12 +159,12 @@ Alasan bahwa pengujian \textit{Specification-Based/Black-box Testing}. pada awal
 
 Dengan pendekatan berbasis spesifikasi untuk menguji identifikasi kasus, satu-satunya informasi yang digunakan adalah spesifikasi perangkat lunak. Oleh karena itu, \textit{test case} memiliki dua keunggulan berbeda: 
 \begin{enumerate}
-\item Mereka tidak tergantung pada bagaimana perangkat lunak diimplementasikan, jadi jika implementasi berubah, \textit{test case} masih berguna.
+\item Tidak tergantung pada bagaimana perangkat lunak diimplementasikan, jadi jika implementasi berubah, \textit{test case} masih berguna.
 \item Pengembangan \textit{test case} dapat terjadi secara paralel dengan implementasi, sehingga mengurangi keseluruhan interval pengembangan proyek.
 \end{enumerate} 
-Di sisi negatif, kasus uji berbasis spesifikasi sering mengalami dua masalah, redudansi yang signifikan mungkin ada di antara kasus uji, dan diperparah oleh kemungkinan kesenjangan perangkat lunak yang tidak diuji.
+Di sisi negatif, kasus uji berbasis spesifikasi sering mengalami dua masalah, redudansi yang signifikan ada di antara kasus uji, dan diperparah oleh kemungkinan kesenjangan perangkat lunak yang tidak diuji.
 
-Gambar 3 menunjukkan hasil \textit{test case} yang diidentifikasi oleh dua metode berbasis spesifikasi. Metode A mengidentifikasi serangkaian kasus uji yang lebih besar daripada metode B. Perhatikan bahwa, untuk kedua metode, rangkaian kasus uji sepenuhnya terkandung dalam rangkaian perilaku tertentu. Karena metode berbasis spesifikasi didasarkan pada perilaku yang ditentukan, sulit untuk membayangkan metode ini mengidentifikasi perilaku yang tidak ditentukan.
+Gambar 4 menunjukkan hasil \textit{test case} yang diidentifikasi oleh dua metode berbasis spesifikasi. Metode A mengidentifikasi serangkaian kasus uji yang lebih besar daripada metode B. Perhatikan bahwa, untuk kedua metode, rangkaian kasus uji sepenuhnya terkandung dalam rangkaian perilaku tertentu. Karena metode berbasis spesifikasi didasarkan pada perilaku yang ditentukan, sulit untuk membayangkan metode ini mengidentifikasi perilaku yang tidak ditentukan.
 \begin{figure}
 	\includegraphics[scale=1.2]{../DokumenSkripsi/gambar/compareAB}
 	\centering
@@ -153,32 +172,35 @@ Gambar 3 menunjukkan hasil \textit{test case} yang diidentifikasi oleh dua metod
 \end{figure}
 \textit{Code-Based/White-box Testing} adalah pendekatan mendasar lainnya untuk menguji \textit{test case}. Untuk membandingkannya dengan pengujian \textit{black box}, kadang-kadang disebut pengujian \textit{white box} (atau bahkan \textit{clear box}). Metafora \textit{clear box} mungkin lebih tepat karena perbedaan mendasar adalah bahwa implementasi (\textit{black box}) diketahui dan digunakan untuk mengidentifikasi \textit{test case}. Kemampuan untuk "melihat ke dalam" \textit{black box} memungkinkan tester untuk mengidentifikasi \textit{test case} berdasarkan bagaimana fungsi tersebut benar-benar dijalankan.
 
+\subsection*{\textit{Code-Based/White-box Testing}}
 Pengujian berbasis kode telah menjadi subjek dari beberapa teori yang cukup kuat. Dengan konsep-konsep ini, tester dapat dengan ketat menggambarkan dengan tepat apa yang akan diuji. Karena dasar teorinya yang kuat, pengujian berbasis kode cocok untuk menjadi definisi dan penggunaan \textit{test coverage metrics}. \textit{Test coverage metrics} menyediakan cara untuk secara eksplisit menyatakan sejauh mana \textit{item} perangkat lunak telah diuji, dan ini pada gilirannya membuat manajemen pengujian lebih jelas.
 \begin{figure}[h!]
  \includegraphics[scale=1.2]{../DokumenSkripsi/gambar/compareAB-whitebox}
  \centering
  \caption{Comparing code-based test case identification methods.}
 \end{figure}
-Gambar 4 menunjukkan hasil \textit{test case} yang diidentifikasi oleh dua metode berbasis kode. Seperti sebelumnya, metode A mengidentifikasi satu set kasus uji yang lebih besar daripada metode B. Apakah satu set kasus uji yang lebih besar tentu lebih baik? Ini adalah pertanyaan yang bagus, dan pengujian berbasis kode menyediakan cara-cara penting untuk mengembangkan jawaban. Perhatikan bahwa, untuk kedua metode, himpunan kasus uji sepenuhnya terkandung dalam himpunan perilaku yang diprogram. Karena metode berbasis kode didasarkan pada program, sulit membayangkan metode ini mengidentifikasi perilaku yang tidak diprogram. Sangat mudah untuk membayangkan, bagaimanapun, bahwa serangkaian kasus uji berbasis kode relatif kecil sehubungan dengan perilaku lengkap yang diprogram. 
+Gambar 5 menunjukkan hasil \textit{test case} yang diidentifikasi oleh dua metode berbasis kode. Seperti sebelumnya, metode A mengidentifikasi satu set kasus uji yang lebih besar daripada metode B. Apakah satu set kasus uji yang lebih besar tentu lebih baik? Ini adalah pertanyaan yang bagus, dan pengujian berbasis kode menyediakan cara-cara penting untuk mengembangkan jawaban. Perhatikan bahwa, untuk kedua metode, himpunan kasus uji sepenuhnya terkandung dalam himpunan perilaku yang diprogram. Karena metode berbasis kode didasarkan pada program, sulit membayangkan metode ini mengidentifikasi perilaku yang tidak diprogram. Sangat mudah untuk membayangkan, bagaimanapun, bahwa serangkaian kasus uji berbasis kode relatif kecil sehubungan dengan perilaku lengkap yang diprogram. 
 
-Tahap paling dalam pada pengujian perangkat lunak adalah \textit{unit testing}.Dalam \textit{unit testing}, kita menguji setiap unit kode secara individu, biasanya sebuah \textit{method}, dalam isolasi untuk melihat apakah jika diberikan suatu kondisi tertentu, apakah respons yang didapat akan sama dengan yang diharapkan (lihat Gambar 5). Memecah pengujian ke tingkat dasar memberi keyakinan bahwa setiap bagian dari aplikasi akan berperilaku seperti yang diharapkan dan memungkinkan untuk menutupi kasus di mana hal yang tidak terduga terjadi dan dapat ditangani dengan cara yang tepat.
+\section*{\textit{Unit Testing}}
+Tahap paling dalam pada pengujian perangkat lunak adalah \textit{unit testing}.Dalam \textit{unit testing}, kita menguji setiap unit kode secara individu, biasanya sebuah \textit{method}, dalam isolasi untuk melihat apakah jika diberikan suatu kondisi tertentu, apakah respons yang didapat akan sama dengan yang diharapkan (lihat Gambar 7). Memecah pengujian ke tingkat dasar memberi keyakinan bahwa setiap bagian dari aplikasi akan berperilaku seperti yang diharapkan dan memungkinkan untuk menutupi kasus di mana hal yang tidak terduga terjadi dan dapat ditangani dengan cara yang tepat.
 \begin{figure}[h!]
 	\includegraphics[scale=1.5]{../DokumenSkripsi/gambar/unittest}
 	\centering
 	\caption{Contoh struktur aplikasi yang menunjukkan kelas dan method. Method adalah "unit" yang akan diuji.}
 \end{figure}
 
-Pada contoh diatas, \textit{method} yang disorot adalah unit individual dari aplikasi ini yang perlu diuji. Jika tahu bahwa masing-masing \textit{method} pada kelas \textit{Calculator} berfungsi seperti yang diharapkan, maka kita yakin bahwa fitur-fitur aplikasi \textit{Calculator} tersebut telah berjalan sesuai harapan.
+Pada contoh diatas, \textit{method} yang disorot adalah unit individual dari aplikasi ini yang perlu diuji.\textit{Method} pada kelas \textit{Calculator} berfungsi seperti yang diharapkan, maka kita yakin bahwa fitur-fitur aplikasi \textit{Calculator} tersebut telah berjalan sesuai harapan.
 
 Misalnya, kita ingin menguji apakah hasil dari \textit{method} dengan dua angka benar-benar menambahkannya untuk menghasilkan jumlah yang benar. Memecah kode menjadi \textit{unit-unit} ini membuat proses pengujian lebih mudah. Saat berurusan dengan \textit{unit} kecil dari sebuah aplikasi, kita memiliki pemahaman yang jelas tentang cara kerja unit tersebut dan hal-hal yang memungkinkan untuk salah pada potongan kode tertentu, sehingga memungkinkan untuk menutupi \textit{unit} dengan tes yang sesuai.
 
 Selain itu, saat melakukan pengujian dengan cara ini biasanya jelas jika kita telah memecah kode menjadi unit-unit. Jika harus menulis banyak tes berbeda untuk mencakup semua kemungkinan berbeda yang dapat dilalui \textit{method} ini, \textit{method} tersebut mungkin terlalu besar dan harus dipertimbangkan untuk melakukan \textit{refactoring} menjadi dua metode atau lebih dengan tanggung jawab yang sama. Sebaliknya, mungkin ada kasus di mana \textit{method} terlalu sederhana dan dapat dikombinasikan dengan beberapa fungsi lain untuk membuat \textit{method} yang lebih berguna. Sebagai seorang \textit{programmer} yang berpengalaman, kita harus mulai merasakan metode mana yang yang sudah "berukuran" baik dan mana yang tidak. Sepuluh baris sering merupakan aturan praktis yang baik untuk diikuti. Sebagai programmer yang baik, kita harus berusaha untuk memberikan kode yang paling mudah dibaca.
 
-Tes yang ditulis adalah cerita yang menjelaskan kode dari sebuah program. Apa yang ingin dibaca atau dilihat ketika pertama kali membaca kode dan mencoba memahami apa fungsinya? Konvensi penamaan variabel yang jelas, ringkas, nama kelas, nama file, dan tes dapat membantu membuat kode lebih jelas dan mudah dipelihara untuk orang lain.
+Tes yang ditulis adalah cerita yang menjelaskan kode dari sebuah program. Apa yang ingin dibaca atau dilihat ketika pertama kali membaca kode dan mencoba memahami apa fungsinya? Konvensi penamaan variabel yang jelas, ringkas, nama kelas, nama file, dan tes dapat membantu membuat kode lebih  mudah dipelihara untuk orang lain.
 
+\section*{\textit{Behaviour-Driven Development}}
 Behavior-Driven Development (BDD) adalah seperangkat praktik rekayasa perangkat lunak yang dirancang untuk membantu tim membangun dan memberikan perangkat lunak yang lebih bernilai dan berkualitas lebih cepat. Ini mengacu pada \textit{agile} dan \textit{lean practices} termasuk, khususnya, \textit{Test-Driven Development} (TDD) dan \textit{Domain-Driven Design} (DDD). Tetapi yang paling penting, BDD menyediakan bahasa umum berdasarkan kalimat-kalimat sederhana dan terstruktur yang diekspresikan dalam bahasa Inggris (atau dalam bahasa asli para pemangku kepentingan) yang memfasilitasi komunikasi antara anggota tim proyek dan pemangku kepentingan bisnis.
 
-Untuk lebih memahami cara kerja BDD, dengan BDD yang berevolusi dari TDD, kita harus membahas sedikit tentang TDD. Test-Driven Development (TDD) adalah praktik pengembangan yang menggunakan \textit{unit test} untuk menentukan, merancang, dan memverifikasi kode yang akan ditulis. Sebelum menerapkan fungsionalitas, \textit{developer} menulis \textit{unit test} yang sengaja digagalkan untuk menunjukkan bagaimana fungsi ini seharusnya bekerja. Pada saat yang sama, pengujian gagal ini juga membuktikan bahwa implementasi saat ini belum mendukung fungsionalitas yang baru. Baru setelah itu \textit{developer} menulis kode program. Setelah \textit{unit testing} berlalu, \textit{developer} tahu bahwa fungsionalitas telah berhasil diimplementasikan. Pada tahap ini, mereka dapat meninjau kode mereka untuk merapikan dan menyempurnakan desain.
+Untuk lebih memahami cara kerja BDD, dengan BDD yang hasil pengembangan dari TDD, kita harus membahas sedikit tentang TDD. Test-Driven Development (TDD) adalah praktik pengembangan yang menggunakan \textit{unit test} untuk menentukan, merancang, dan memverifikasi kode yang akan ditulis. Sebelum menerapkan fungsionalitas, pengembang menulis \textit{unit test} yang sengaja digagalkan untuk menunjukkan bagaimana fungsi ini seharusnya bekerja. Pada saat yang sama, pengujian gagal ini juga membuktikan bahwa implementasi saat ini belum mendukung fungsionalitas yang baru. Baru setelah itu pengembang menulis kode program. Setelah \textit{unit testing} berlalu, pengembang tahu bahwa fungsionalitas telah berhasil diimplementasikan. Pada tahap ini, mereka dapat meninjau kode mereka untuk merapikan dan menyempurnakan desain.
 
 BDD pada awalnya dirancang sebagai versi perbaikan TDD. BDD awalnya ditemukan oleh Dan North pada awal hingga pertengahan 2000-an sebagai cara yang lebih mudah untuk mengajar dan mempraktikkan Test-Driven Development (TDD). TDD, ditemukan oleh Kent Beck pada awal munculnya \textit{Agile Development}, itu adalah teknik efektif yang menggunakan \textit{unit test} untuk menentukan, merancang, dan memverifikasi kode program.
 
@@ -189,7 +211,7 @@ Ketika pengguna TDD perlu mengimplementasikan fitur, mereka terlebih dahulu menu
 	\centering
 	\caption{Test-Driven Development three-phase cycle}
 \end{figure}
-Terlepas dari kelebihannya, banyak orang masih kesulitan mengadopsi dan menggunakan TDD secara efektif. \textit{Developer} sering mengalami kesulitan mengetahui di mana harus memulai atau tes apa yang harus mereka tulis selanjutnya. Terkadang TDD dapat menyebabkan \textit{developer} menjadi terlalu fokus pada detail, kehilangan gambaran yang lebih luas tentang tujuan bisnis yang seharusnya mereka terapkan. Beberapa tim juga menemukan bahwa sejumlah besar \textit{unit test} dapat menjadi sulit untuk dipertahankan karena ukuran proyek bertambah.
+Terlepas dari kelebihannya, banyak orang masih kesulitan mengadopsi dan menggunakan TDD secara efektif. Pengembang sering mengalami kesulitan mengetahui di mana harus memulai atau tes apa yang harus mereka tulis selanjutnya. Terkadang TDD dapat menyebabkan pengembang menjadi terlalu fokus pada detail, kehilangan gambaran yang lebih luas tentang tujuan bisnis yang seharusnya mereka terapkan. Beberapa tim juga menemukan bahwa sejumlah besar \textit{unit test} dapat menjadi sulit untuk dipertahankan karena ukuran proyek bertambah.
 
 Faktanya, banyak \textit{unit testing} tradisional, ditulis dengan atau tanpa TDD, secara erat digabungkan dengan implementasi kode tertentu. Mereka fokus pada metode atau fungsi yang mereka uji, bukan pada apa yang harus dilakukan kode dalam  bisnis \textit{term}.
 
@@ -210,7 +232,7 @@ Pemilik bisnis dapat dengan mudah memahami skenario yang ditulis seperti ini. In
 
 Notasi ini akhirnya berkembang menjadi bentuk yang umum digunakan, dan sering disebut sebagai Gherkin. Dengan \textit{tools} yang tepat, skenario yang ditulis dalam formulir ini dapat diubah menjadi \textit{acceptance criteria} yang otomatis dan dapat dieksekusi secara otomatis juga kapanpun diperlukan. 
 
-Ketika sebuah tim yang mempraktikkan BDD memutuskan untuk mengimplementasikan sebuah fitur, mereka bekerja bersama dengan pengguna dan \textit{stakeholders} lainnya untuk mendefinisikan \textit{user stories} dan skenario tentang apa yang diharapkan oleh pengguna untuk diberikan oleh fitur ini. Secara khusus, para pengguna membantu mendefinisikan sekumpulan contoh konkret yang menggambarkan \textit{key outcome} dari fitur tersebut. (Lihat Gambar 7)
+Ketika sebuah tim yang mempraktikkan BDD memutuskan untuk mengimplementasikan sebuah fitur, mereka bekerja bersama dengan pengguna dan \textit{stakeholders} lainnya untuk mendefinisikan \textit{user stories} dan skenario tentang apa yang diharapkan oleh pengguna untuk diberikan oleh fitur ini. Secara khusus, para pengguna membantu mendefinisikan sekumpulan contoh konkret yang menggambarkan \textit{key outcome} dari fitur tersebut. (Lihat Gambar 8)
 \begin{figure}
 	\includegraphics[scale=1.2]{../DokumenSkripsi/gambar/skenario}
 	\centering
@@ -218,7 +240,7 @@ Ketika sebuah tim yang mempraktikkan BDD memutuskan untuk mengimplementasikan se
 requirements more clearly}
 \end{figure}
 
-\textit{Examples} ini menggunakan kosakata umum dan dapat dengan mudah dipahami oleh pengguna dan anggota tim \textit{developer}. Mereka biasanya diekspresikan menggunakan Notasi \textit{Given} ... \textit{When} ... \textit{Then} yang sama seperti contoh tadi diatas. Misalnya, contoh sederhana yang menggambarkan fitur "\textit{Transfer funds between a client’s accounts}" mungkin terlihat seperti ini:\\
+\textit{Examples} ini menggunakan kosakata umum dan dapat dengan mudah dipahami oleh pengguna dan anggota tim pengembang. Mereka biasanya diekspresikan menggunakan Notasi \textit{Given} ... \textit{When} ... \textit{Then} yang sama seperti contoh tadi diatas. Misalnya, contoh sederhana yang menggambarkan fitur "\textit{Transfer funds between a client’s accounts}" mungkin terlihat seperti ini:\\
 \texttt{Scenario: Transferring money to a savings account\\
  Given I have a current account with 1000.00\\
  And I have a savings account with 2000.00\\
@@ -228,11 +250,12 @@ requirements more clearly}
  
 \textit{Examples} memainkan peran utama dalam BDD, hanya karena mereka adalah cara yang sangat efektif untuk mengkomunikasikan persyaratan yang jelas, tepat, dan tidak ambigu. Spesifikasi yang ditulis dalam bahasa alami, ternyata, merupakan cara komunikasi yang sangat buruk, karena ada begitu banyak ruang untuk ambiguitas, asumsi, dan kesalahpahaman. Contohnya adalah cara yang bagus untuk mengatasi keterbatasan ini dan mengklarifikasi persyaratan. \textit{Examples} adalah cara yang bagus untuk mengatasi keterbatasan ini dan mengklarifikasi persyaratan.
 
+\section*{\textit{Code Coverage}}
 \textit{Code Coverage} adalah metrik yang digunakan untuk mengkarakterisasi tingkat di mana beberapa  kode aplikasi telah dieksekusi setelah dilakukannya tes. Ini dihitung dengan hasil berbentuk persentase, dihitung dengan pembagian $\frac{Code{\tiny exec}}{Code{\tiny region}}$, menunjukkan jumlah kode sumber yang sudah dieksekusi (Code{\tiny exec}) berkenaan dengan jumlah total kode sumber yang harus dilakukan (Code{\tiny region}).
 
 Semakin tinggi \textit{code coverage}-nya, semakin besar jumlah kode yang dikerjakan selama eksekusi pengujian sehubungan dengan \textit{region} kode yang diuji. Meskipun telah ditunjukkan bahwa cakupan kode yang tinggi tidak selalu berarti deteksi \textit{bug} yang tinggi. Namun, tidak mungkin untuk mengatakan apapun tentang area kode yang tidak pernah dijalankan. Dengan demikian, \textit{code coverage} yang digunakan sebagai relatif \textit{measure} berfungsi sebagai indikator yang cocok untuk pengujian yang baik.
 
-Secara umum, \textit{code coverage} dilakukan dengan menginstruksikan kode aplikasi dan kemudian memperoleh data cakupan dari bagian instrumentasi. Ada beberapa alat yang menyediakan informasi seperti itu, misalnya, JaCoCo4. Namun, dalam beberapa konteks, peneliti tidak diizinkan untuk melakukan instrumentasi, karena pengujian tidak dilakukan di tingkat pengembangan. Dalam kasus seperti itu, hanya mungkin untuk melakukan proses pemantauan yang tidak perlu memodifikasi aplikasi yang sudah di-\textit{compile}. Untuk Android, kami menggunakan ddmlib5 \textit{tracer} untuk melihat ketika metode dipanggil saat melakukan eksekusi \textit{test case}.
+Secara umum, \textit{code coverage} dilakukan dengan menginstruksikan kode aplikasi dan kemudian memperoleh data cakupan dari bagian instrumentasi. Ada beberapa alat yang menyediakan informasi seperti itu, misalnya, JaCoCo4. Namun, dalam beberapa konteks, peneliti tidak diizinkan untuk melakukan instrumentasi, karena pengujian tidak dilakukan di tingkat pengembangan. Dalam kasus seperti itu, hanya mungkin untuk melakukan proses pemantauan yang tidak perlu memodifikasi aplikasi yang sudah dikompilasi. Untuk Android, kami menggunakan ddmlib5 \textit{tracer} untuk melihat ketika metode dipanggil saat melakukan eksekusi \textit{test case}.
 
 Ada beberapa kriteria untuk melakukan \textit{code coverage}, yaitu :
 \begin{itemize}
@@ -248,16 +271,16 @@ Ada beberapa kriteria untuk melakukan \textit{code coverage}, yaitu :
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
 		{\bf Hasil :} Melakukan eksplorasi perangkat lunak sudah dilakukan dengan membaca buku tentang behaviour-driven development, behaviour specification dan melihat cara kerja perangkat lunak yang menggunakan BDD sebagai dasar sistemnya.
 		
-Perangkat lunak yang menggunakan BDD sebagai dasar rata-rata menggunakan Gherkin sebagai format yang digunakan untuk merancang sebuah sistem, dimana Gherkin dirancang/dibuat oleh \textit{stakeholder} dan dari situ tim \textit{developer} akan membuat sistem berpatokan dari Gherkin yang sudah dibuat oleh \textit{stakeholder}.
+Perangkat lunak yang menggunakan BDD sebagai dasar rata-rata menggunakan format Gherkin yang digunakan untuk merancang sebuah sistem, dimana Gherkin dirancang/dibuat oleh \textit{stakeholder} dan dari situ tim pengembang akan membuat sistem berpatokan dari Gherkin yang sudah dibuat oleh \textit{stakeholder}.
 
-Nanti perangkat lunak akan menerima Gherkin yang berformat:
+Perangkat lunak akan menerima input teks dengan format Gherkin sebagai berikut:
 \begin{itemize}
- \item \textit{Given} menjelaskan prekondisi untuk skenario dan mempersiapkan \textit{environment} untuk tes.
- \item \textit{When} menjelaskan tindakan yang sedang dilakukan pada tes.
- \item \textit{Then} menjelaskan hasil yang diharapkan.
- \item \textit{And} dan \textit{But} bisa digunakan untuk menggabungkan beberapa dari \textit{keyword} diatas.
+ \item \textit{\textbf{Given}} menjelaskan prekondisi untuk skenario dan mempersiapkan \textit{environment} untuk tes.
+ \item \textit{\textbf{When}} menjelaskan tindakan yang sedang dilakukan pada tes.
+ \item \textit{\textbf{Then}} menjelaskan hasil yang diharapkan.
+ \item \textit{\textbf{And}} dan \textit{\textbf{But}} bisa digunakan untuk menggabungkan beberapa dari \textit{keyword} diatas.
 \end{itemize}
-Dari \textit{keywords} tersebut akan digunakan sebagai kunci oleh perangkat lunak untuk melakukan sesuatu. Contoh dengan skenario:\\
+Dari \textit{keywords} yang ditebalkan tersebut akan digunakan sebagai kunci oleh perangkat lunak untuk melakukan sesuatu. Contoh dengan skenario:\\
 \texttt{\textbf{Scenario}: Buying a single product\\
 \textbf{Given} there is a Playstation 4, which cost \$250\\
 \textbf{When} I add the Playstation 4 to the basket\\
@@ -269,13 +292,15 @@ Dari \textit{keywords} tersebut akan digunakan sebagai kunci oleh perangkat luna
 		{\bf Hasil :} Menganalisis kebutuhan perangkat lunak sudah dilakukan dengan mencari berbagai program pengujian perangkat lunak dan \textit{tools} apa yang digunakan. Buku yang digunakan untuk referensi yaitu \textit{Beginning HTML with CSS and XHTML: Modern Guide and Reference, PHP and MySQL Manual,} dan \textit{CodeIgniter 1.7 Professional 
 Development}
 
+\section*{HTML}
 HyperText Markup Language (HTML) adalah bahasa pengkodean komputer yang digunakan untuk mengubah teks biasa menjadi teks aktif untuk ditampilkan dan digunakan di web dan juga untuk memberikan teks biasa, tidak terstruktur, jenis struktur yang diandalkan manusia untuk membacanya. Tanpa semacam struktur yang digunakan pada html, teks biasa hanya akan berjalan bersama tanpa apapun untuk membedakan satu untaian kata dari yang lain.
 
 HTML terdiri dari penanda yang dikodekan yang disebut \textit{tag} yang mengelilingi dan membedakan bit teks, yang menunjukkan fungsi dan tujuan dari teks yang diberi tag. Tag tertanam secara langsung dalam dokumen teks biasa di mana mereka dapat diinterpretasikan oleh perangkat lunak komputer. Tag HTML menunjukkan sifat sebagian konten dan memberikan informasi penting tentangnya. Tag berdiri sendiri tidak ditampilkan dan berbeda dari konten yang sebenarnya mereka sampaikan.
 
+\section*{PHP}
 PHP (PHP Hypertext Pre-processor) adalah bahasa scripting yang disematkan HyperText Markup Language (HTML). Tujuan dari bahasa ini adalah untuk memungkinkan pembangunan halaman Web dinamis dengan cepat dan mudah. PHP bekerja bersama dengan server web dan dapat digunakan dengan berbagai sistem operasi, termasuk Microsoft Windows dan UNIX.
 
-PHP berbeda dari Common Gateway Interface (CGI) lainnya, yang ditulis dalam bahasa seperti Perl atau C, karena mengharuskan membuat program terpisah, yang menghasilkan HTML. PHP berbeda karena tertanam dalam dokumen HTML dengan tag awal dan akhir khusus yang memungkinkan untuk keluar dan masuk dari PHP. Ini memberikan waktu tampilan halaman yang cepat, keamanan tinggi dan transparansi bagi pengguna. Dengan PHP kita dapat memperoleh semua yang dapat dicapai dengan menulis aplikasi CGI terpisah, seperti membuat halaman web yang dinamis, pemrosesan formulir dan penanganan file.
+PHP tertanam dalam dokumen HTML dengan tag awal dan akhir khusus yang memungkinkan untuk keluar dan masuk dari PHP. Ini memberikan waktu tampilan halaman yang cepat, keamanan tinggi dan transparansi bagi pengguna. Dengan PHP kita dapat memperoleh semua yang dapat dicapai dengan menulis aplikasi terpisah, seperti membuat halaman web yang dinamis, pemrosesan formulir dan penanganan file.
 
 Sintaks PHP mirip dengan bahasa pemrograman C, C ++ dan Java. Jika  memiliki pengetahuan tentang bahasa-bahasa ini, maka akan menemukan bahwa bahasa PHP sangat akrab. PHP sederhana dan mudah untuk dipahami, jangan takut untuk mempelajari bahasa ini.
 
@@ -290,16 +315,16 @@ Di sisi pemrograman, CodeIgniter kompatibel dengan PHP4 dan PHP5, sehingga akan 
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
 		{\bf Hasil :}Membuat rancangan desain antarmuka perangkat lunak sudah dilakukan dengan menggunakan HTML dan CSS.
 		\begin{figure}[h!]
-			\includegraphics[scale=0.4]{../DokumenSkripsi/gambar/ui}
+			\includegraphics[scale=0.45]{../DokumenSkripsi/gambar/uiFix}
 			\centering
 			\caption{Tampilan antarmuka perangkat lunak}
 		\end{figure}
-		Dapat dilihat pada gambar 8 terdapat tabel yang berisikan 2 kolom. Tabel tersebut berfungsi untuk menampung unit testing yang akan diuji jika tombol pada kolom 2 ditekan pada method yang akan diuji. Dibawah tabel tersebut terdapat tombol untuk melakukan \textit{upload} unit testing yang berupa file berisi skenario dengan format Gherkin. Setelah file tersebut di-\textit{upload} maka unit testing tersebut akan tertera pada tabel tersebut.
+		Dapat dilihat pada gambar 9 terdapat tabel yang berisikan 2 kolom. Tabel tersebut berfungsi untuk menampung unit testing yang akan diuji jika tombol pada kolom 2 ditekan pada method yang akan diuji. Dibawah tabel tersebut terdapat tombol untuk melakukan \textit{upload} unit testing yang berupa file berisi skenario dengan format Gherkin. Setelah file tersebut diunggah maka unit testing tersebut akan tertera pada tabel tersebut.
 
 
 		\item \textbf{Menulis dokumen skripsi}\\
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
-		{\bf Hasil :} Menulis dokumen skripsi sudah dilakukan untuk bab 1 dan bab 2.
+		{\bf Hasil :} Menulis dokumen skripsi sudah dilakukan untuk Bab 1 dan Bab 2.
 
 	\end{enumerate}
 
